@@ -13,4 +13,6 @@
         <string name="_0">0</string>
         <string name="delete"><![CDATA[<]]></string>
     <string name="_ok">OK</string>
+    <string name="code_true">Код вверный</string>
+    <string name="not_true">Не верно!</string>
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="button">
+        <item name="android:textSize">22sp</item>
+        <item name="background">@drawable/shape</item>
+        <item name="android:textColor"></item>
+    </style>
+</resources>

@@ -1,17 +1,23 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    val  KEY_TEXT:String = "TEXTCODE"
+    val ID_COLOR:String = "IDCOLOR"
+    lateinit var textCode: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textCode: TextView = findViewById(R.id.txt_code)
+        textCode = findViewById(R.id.txt_code)
+
 
         val oneButton: Button = findViewById(R.id.number_1)
         val twoButton: Button = findViewById(R.id.number_2)
@@ -30,7 +36,6 @@ class MainActivity : AppCompatActivity() {
             checkText(textCode)
             val currentText = textCode.text.toString()
             val newText = (currentText.toInt() * 10 + 1).toString()
-
             textCode.text = newText
         }
 
@@ -62,7 +67,6 @@ class MainActivity : AppCompatActivity() {
             checkText(textCode)
             val currentText = textCode.text.toString()
             val newText = (currentText.toInt() * 10 + 5).toString()
-
             textCode.text = newText
         }
 
@@ -103,7 +107,6 @@ class MainActivity : AppCompatActivity() {
             val currentText = textCode.text.toString()
             val newText = (currentText.toInt() / 10).toString()
 
-            // Изменить текст в TextView
             textCode.text = newText
             checkText(textCode)
         }
@@ -113,7 +116,6 @@ class MainActivity : AppCompatActivity() {
             val currentText = textCode.text.toString()
             val newText = (currentText.toInt() * 10).toString()
 
-            // Изменить текст в TextView
             textCode.text = newText
         }
 
@@ -121,20 +123,36 @@ class MainActivity : AppCompatActivity() {
             val currentText = textCode.text.toString()
             if (currentText.toInt() == 1567) {
                 Toast.makeText(this, getString(R.string.code_true), Toast.LENGTH_SHORT).show()
+                textCode.setTextColor(getColor(R.color.blue))
+                val intent = Intent(this,MainActivity2::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(this, getString(R.string.not_true), Toast.LENGTH_SHORT).show()
+                textCode.setTextColor(getColor(R.color.red))
 
             }
         }
 
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(KEY_TEXT, textCode.text.toString())
+        outState.putInt(ID_COLOR, textCode.currentTextColor)
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        textCode.text = savedInstanceState.getString(KEY_TEXT)
+        textCode.setTextColor(savedInstanceState.getInt(ID_COLOR))
+    }
+
+
 }
 
 fun checkText(textView: TextView){
-    if (textView.text == "Введите код!") {
-        val newText = 0
-        textView.text = newText.toString()
-    }else if(textView.text == "0"){
+    if (textView.text.toString() == "Введите код!") {
+        textView.text = "0"
+    } else if (textView.text.toString() == "0") {
         textView.text = "Введите код!"
     }
 }

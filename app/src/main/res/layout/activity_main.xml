@@ -24,24 +24,24 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_1"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_1"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape"
+        android:text="@string/_1"
         app:layout_constraintEnd_toStartOf="@+id/number_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_code" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_2"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/shape"
-        android:textColor="@color/blue"
         android:text="@string/_2"
         app:layout_constraintEnd_toStartOf="@+id/number_3"
         app:layout_constraintStart_toEndOf="@id/number_1"
@@ -49,125 +49,126 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_3"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_3"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/number_2"
         app:layout_constraintTop_toBottomOf="@+id/txt_code" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_4"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_4"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_4"
         app:layout_constraintEnd_toStartOf="@+id/number_5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number_1" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_5"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_5"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
         android:layout_marginTop="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_5"
         app:layout_constraintEnd_toStartOf="@+id/number_4"
         app:layout_constraintStart_toEndOf="@id/number_6"
         app:layout_constraintTop_toBottomOf="@+id/number_2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_6"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_6"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/number_5"
         app:layout_constraintTop_toBottomOf="@+id/number_3" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_7"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_7"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_7"
         app:layout_constraintEnd_toStartOf="@+id/number_8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number_4" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_8"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_8"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
         android:layout_marginTop="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_8"
         app:layout_constraintEnd_toStartOf="@+id/number_9"
         app:layout_constraintStart_toEndOf="@id/number_7"
         app:layout_constraintTop_toBottomOf="@+id/number_5" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_9"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_9"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/number_8"
         app:layout_constraintTop_toBottomOf="@+id/number_6" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/delete"
-        android:background="@drawable/shape"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/delete"
         app:layout_constraintEnd_toStartOf="@+id/number_0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number_7" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_0"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_0"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
         android:layout_marginTop="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_0"
         app:layout_constraintEnd_toStartOf="@+id/btn_ok"
         app:layout_constraintStart_toEndOf="@id/btn_delete"
         app:layout_constraintTop_toBottomOf="@+id/number_8" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_ok"
+        style="@style/PinButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_ok"
-        android:textColor="@color/blue"
-        android:background="@drawable/shape"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/shape"
+        android:text="@string/_ok"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/number_0"
         app:layout_constraintTop_toBottomOf="@+id/number_9" />

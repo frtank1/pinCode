@@ -3,7 +3,6 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -17,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         textCode = findViewById(R.id.txt_code)
-
 
         val oneButton: Button = findViewById(R.id.number_1)
         val twoButton: Button = findViewById(R.id.number_2)
@@ -124,7 +122,7 @@ class MainActivity : AppCompatActivity() {
             if (currentText.toInt() == 1567) {
                 Toast.makeText(this, getString(R.string.code_true), Toast.LENGTH_SHORT).show()
                 textCode.setTextColor(getColor(R.color.blue))
-                val intent = Intent(this,MainActivity2::class.java)
+                val intent = Intent(this,ResultActivity::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, getString(R.string.not_true), Toast.LENGTH_SHORT).show()

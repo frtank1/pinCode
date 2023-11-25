@@ -6,6 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_default"
+        app:layout_constraintBottom_toTopOf="@id/txt_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/_20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="name"
+        app:layout_constraintBottom_toTopOf="@id/txt_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/_20dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="mail"
+        app:layout_constraintBottom_toTopOf="@id/btn_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/_20dp" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_share"
         style="@style/LongButton"

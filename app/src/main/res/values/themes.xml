@@ -9,8 +9,15 @@
 
     
     <style name="PinButton" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColor">@drawable/bg_btn_text_color</item>
         <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@drawable/btn_shape_background</item>
+    </style>
+
+    <style name="PinButtonOk" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@drawable/bg_btn_text_color</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@drawable/btn_ok_bagraund</item>
     </style>
 
     <style name="LongButton" parent="PinButton">

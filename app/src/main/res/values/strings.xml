@@ -20,4 +20,5 @@
     <string name="call">Позвонить</string>
     <string name="open_camera">Открыть Камеру</string>
     <string name="delete"><![CDATA[<]]></string>
+    <string name="code_is_empty">Введите код!</string>
 </resources>

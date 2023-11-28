@@ -3,13 +3,14 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    val  KEY_TEXT:String = "TEXTCODE"
-    val ID_COLOR:String = "IDCOLOR"
+    val KEY_TEXT: String = "TEXTCODE"
+    val ID_COLOR: String = "IDCOLOR"
     lateinit var textCode: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -117,17 +118,30 @@ class MainActivity : AppCompatActivity() {
             textCode.text = newText
         }
 
+        deleteButton.setOnLongClickListener {
+            textCode.text = getString(R.string.code_is_empty)
+            Toast.makeText(this@MainActivity, "Долгое нажатие!", Toast.LENGTH_SHORT).show()
+            true
+        }
+
         okButton.setOnClickListener {
             val currentText = textCode.text.toString()
-            if (currentText.toInt() == 1567) {
-                Toast.makeText(this, getString(R.string.code_true), Toast.LENGTH_SHORT).show()
-                textCode.setTextColor(getColor(R.color.blue))
-                val intent = Intent(this,ResultActivity::class.java)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, getString(R.string.not_true), Toast.LENGTH_SHORT).show()
-                textCode.setTextColor(getColor(R.color.red))
+            when (currentText) {
+                getString(R.string.code_is_empty) -> {
 
+                }
+
+                "1567" -> {
+                    Toast.makeText(this, getString(R.string.code_true), Toast.LENGTH_SHORT).show()
+                    textCode.setTextColor(getColor(R.color.blue))
+                    val intent = Intent(this, ResultActivity::class.java)
+                    startActivity(intent)
+                }
+
+                else -> {
+                    Toast.makeText(this, getString(R.string.not_true), Toast.LENGTH_SHORT).show()
+                    textCode.setTextColor(getColor(R.color.red))
+                }
             }
         }
 
@@ -138,6 +152,7 @@ class MainActivity : AppCompatActivity() {
         outState.putString(KEY_TEXT, textCode.text.toString())
         outState.putInt(ID_COLOR, textCode.currentTextColor)
     }
+
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         textCode.text = savedInstanceState.getString(KEY_TEXT)
@@ -147,7 +162,8 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-fun checkText(textView: TextView){
+fun
+        checkText(textView: TextView) {
     if (textView.text.toString() == "Введите код!") {
         textView.text = "0"
     } else if (textView.text.toString() == "0") {

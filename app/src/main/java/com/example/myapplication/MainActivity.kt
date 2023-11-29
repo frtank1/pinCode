@@ -120,6 +120,7 @@ class MainActivity : AppCompatActivity() {
 
         deleteButton.setOnLongClickListener {
             textCode.text = getString(R.string.code_is_empty)
+
             Toast.makeText(this@MainActivity, "Долгое нажатие!", Toast.LENGTH_SHORT).show()
             true
         }
@@ -162,8 +163,7 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-fun
-        checkText(textView: TextView) {
+fun checkText(textView: TextView) {
     if (textView.text.toString() == "Введите код!") {
         textView.text = "0"
     } else if (textView.text.toString() == "0") {

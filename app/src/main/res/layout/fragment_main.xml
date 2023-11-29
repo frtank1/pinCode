@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextView"
+            android:text="@string/back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_forward"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/TextView"
+            android:text="@string/forward" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <TextView
+        android:id="@+id/txt_news_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextView"
+        android:text="@string/news_header" />
+    <TextView
+        android:id="@+id/txt_news_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextView"
+        android:text="@string/news_header"  />
+    <TextView
+        android:id="@+id/txt_news_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextView"
+        android:text="@string/news_header"  />
+    <TextView
+        android:id="@+id/txt_news_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextView"
+        android:text="@string/news_header"  />
+    <TextView
+        android:id="@+id/txt_news_five"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextView"
+        android:text="@string/news_header"  />
+    <TextView
+        android:id="@+id/txt_news_six"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextView"
+        android:text="@string/news_header"
+        />
+</androidx.appcompat.widget.LinearLayoutCompat>

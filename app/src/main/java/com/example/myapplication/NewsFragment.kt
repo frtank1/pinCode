@@ -23,7 +23,6 @@ class NewsFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
             news = it.getSerializable(NEWS_TAG) as News
-
         }
     }
 
@@ -31,20 +30,18 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_news, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        textTitle = requireActivity().findViewById(R.id.txt_tile_body)
-        textAuthor = requireActivity().findViewById(R.id.txt_author_body)
-        textNews = requireActivity().findViewById(R.id.txt_news_body)
+        super.onViewCreated(view, savedInstanceState)
+        textTitle = view.findViewById(R.id.txt_tile_body)
+        textAuthor = view.findViewById(R.id.txt_author_body)
+        textNews = view.findViewById(R.id.txt_news_body)
 
         textTitle.text = news.title
         textAuthor.text = news.author
         textNews.text = news.news
-
-        super.onViewCreated(view, savedInstanceState)
     }
 
     companion object {

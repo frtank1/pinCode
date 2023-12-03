@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.hw7to10pincode
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.R
 
 enum class ButtonEvent() {
     SHARE,

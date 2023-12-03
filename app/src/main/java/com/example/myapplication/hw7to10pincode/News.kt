@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.hw7to10pincode
 
 import java.io.Serializable
 

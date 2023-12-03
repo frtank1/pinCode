@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentActivity"
+    tools:context=".hw11.FragmentActivity"
     android:orientation="horizontal">
     <FrameLayout
         android:id="@+id/main_fragment"
@@ -16,7 +16,8 @@
         android:id="@+id/news_fragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+   />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

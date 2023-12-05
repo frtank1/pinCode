@@ -5,9 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".hw12.MainActivity3">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="@dimen/_20dp"
+        android:layout_marginBottom="@dimen/_100dp"
+        android:padding="8dp"
+        android:drawableLeft="@drawable/img_4"
+        android:drawablePadding="8dp"
+        android:background="@drawable/btn_add_bagraund"
+        android:gravity="center_vertical"
+        android:text="Добавить"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

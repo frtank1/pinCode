@@ -13,7 +13,6 @@ class AdapterCountryMoney(
 
     private val data = mutableListOf<Money>()
 
-
     inner class RecylerItemViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         RecyclerView.ViewHolder(inflater.inflate(R.layout.item_recycle, parent, false)) {
         private val countryMoney = itemView.findViewById<TextInputLayout>(R.id.outlinedTextField)
@@ -25,13 +24,22 @@ class AdapterCountryMoney(
             txtCountry.text = item.name
             imgCountry.setImageResource(item.imageRes)
         }
-
     }
 
     fun setItems(list: List<Money>) {
         data.clear()
         data.addAll(list)
         notifyDataSetChanged()
+    }
+
+    fun setItem(money:Money){
+        data.add(money)
+        notifyItemChanged(data.lastIndex)
+    }
+
+    fun setItemToPosition(money:Money, position: Int){
+        data.add(position,money)
+        notifyItemChanged(position)
     }
 
 

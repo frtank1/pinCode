@@ -1,8 +1,11 @@
 package com.example.myapplication.hw12
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ItemTouchHelper.DOWN
 import androidx.recyclerview.widget.ItemTouchHelper.END
@@ -20,6 +23,9 @@ class MainActivity3 : AppCompatActivity(),OnButtonClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar_main)
+        setSupportActionBar(toolbar)
 
         val countryMoneyList = mutableListOf<ImMainInterface>(
             Money(getString(R.string.tenge), R.drawable.img),
@@ -78,11 +84,14 @@ class MainActivity3 : AppCompatActivity(),OnButtonClickListener {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
+                if (adapterRecyclerView.lastIndex()!=position)
                 adapterRecyclerView.deleteItem(position)
                 adapterRecyclerView.notifyItemRemoved(position)
             }
         })
     }
+
+
 
     override fun onButtonClick() {
         val smoothScroller = object : LinearSmoothScroller(this) {
@@ -97,6 +106,26 @@ class MainActivity3 : AppCompatActivity(),OnButtonClickListener {
         )
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.sort_by_name, R.id.sort_by_amount -> {
+                adapterRecyclerView.sortByALphabe()
+                true
+            }
+            R.id.reset_sort -> {
+                adapterRecyclerView.resetItems()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 
 }
 

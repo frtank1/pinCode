@@ -35,4 +35,5 @@
     <string name="lyra">Лиры,Турция</string>
     <string name="euros">Евро,Европа</string>
     <string name="amount">21212</string>
+    <string name="sort">Сортировать по</string>
 </resources>

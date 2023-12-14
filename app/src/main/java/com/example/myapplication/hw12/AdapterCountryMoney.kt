@@ -19,7 +19,8 @@ class AdapterCountryMoney(
         private const val VIEW_TYPE_CURRENCY = 1
         private const val VIEW_TYPE_ADD_BUTTONS = 2
     }
-    private val data = mutableListOf<ImMainInterface>()
+    private var data = mutableListOf<ImMainInterface>()
+    private var originalData = mutableListOf<ImMainInterface>()
 
     fun setItems(list: List<ImMainInterface>) {
         data.clear()
@@ -27,9 +28,18 @@ class AdapterCountryMoney(
         notifyDataSetChanged()
     }
 
+    fun lastIndex():Int{
+        return data.lastIndex
+    }
     fun setItem(money:Money){
-        data.add(money)
-        notifyItemChanged(data.lastIndex)
+        data.add(data.size-1,money)
+        notifyItemChanged(data.size-1)
+    }
+
+    fun resetItems() {
+        data.clear()
+        data.addAll(originalData)
+        notifyDataSetChanged()
     }
 
     fun setItemToPosition(money:Money, position: Int){
@@ -59,6 +69,19 @@ class AdapterCountryMoney(
             else -> VIEW_TYPE_CURRENCY
         }
 
+    fun sortByALphabe(){
+        val last = data.removeLast()
+        data = data.sortedBy {
+            when(it){
+                is Money ->it.name
+                else -> ""
+            }
+        }.toMutableList()
+        notifyDataSetChanged()
+
+        data.add(last   )
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         when(holder){
             is RecylerItemViewHolder ->{
@@ -76,6 +99,7 @@ class AdapterCountryMoney(
     }
 
     fun deleteItem(from: Int){
+        if(data.lastIndex!=from)
         data.removeAt(from)
     }
 }

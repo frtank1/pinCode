@@ -15,8 +15,7 @@
         android:contentInsetLeft="0dp"
         android:contentInsetRight="0dp"
         android:background="@drawable/shape_toolbar"
-        app:contentInsetEnd="2dp"
-        android:theme="@style/ToolbarTheme" />
+        app:contentInsetEnd="2dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

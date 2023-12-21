@@ -21,6 +21,8 @@ class AdapterCountryMoney(
     }
     private var data = mutableListOf<ImMainInterface>()
     private var originalData = mutableListOf<ImMainInterface>()
+    lateinit var  deletItem: ImMainInterface
+    private var index:Int = -1
 
     fun setItems(list: List<ImMainInterface>) {
         data.clear()
@@ -85,7 +87,7 @@ class AdapterCountryMoney(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         when(holder){
             is RecylerItemViewHolder ->{
-                holder.bind(data[position])
+                holder.bind(data[position],onButtonClickListener, position)
             }
             is RecylerButtonViewHolder ->{
                 holder.bind(onButtonClickListener)
@@ -99,8 +101,19 @@ class AdapterCountryMoney(
     }
 
     fun deleteItem(from: Int){
-        if(data.lastIndex!=from)
-        data.removeAt(from)
+        if(data.lastIndex!=from) {
+            deletItem= data.removeAt(from)
+            index = from
+        }
+    }
+
+    fun returnItem(){
+        data.add(index,deletItem)
+        notifyDataSetChanged()
+    }
+
+    override fun registerAdapterDataObserver(observer: RecyclerView.AdapterDataObserver) {
+        super.registerAdapterDataObserver(observer)
     }
 }
 
@@ -111,11 +124,17 @@ class RecylerItemViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     private val imgCountry = itemView.findViewById<ImageView>(R.id.img_country)
     private val txtCountry = itemView.findViewById<TextView>(R.id.txt_country)
 
-    fun bind(item: ImMainInterface ) {
+    fun bind(item: ImMainInterface ,onButtonClickListener: OnButtonClickListener,position: Int) {
         item as Money
         countryMoney.hint = item.name
         txtCountry.text = item.name
         imgCountry.setImageResource(item.imageRes)
+        itemView.setOnLongClickListener {
+            onButtonClickListener.onLongClickListener(
+                position
+            )
+            true
+        }
     }
 }
 

@@ -43,6 +43,11 @@ class MaxPlayerFragment : Fragment() {
         if(item!=null) {
             val imageUrl = item!!.imageUrl
             binding.viewMovie.setImageDrawable(requireActivity().getDrawable(imageUrl))
+            binding.closeIcon.setOnClickListener {
+                activity?.supportFragmentManager?.apply {
+                    popBackStack()
+                }
+            }
         }
 
     }

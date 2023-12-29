@@ -35,7 +35,7 @@ class MovieAdapter(
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = data[position]
         with(holder.binding){
-            viewMovieCard.setOnClickListener{
+            player.setOnClickListener{
                 onItemViewClickListener?.onItemViewClick(movie)
             }
         }

@@ -10,13 +10,26 @@
     app:layoutDescription="@xml/motion_scene"
     tools:showPaths="true">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/viewMovie"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/player"
         android:layout_width="391dp"
         android:layout_height="248dp"
-        android:layout_gravity="center"
-        android:scaleType="fitXY"
-        android:background="#fa2255"
-        android:src="@drawable/group46"/>
+        app:cardCornerRadius="@dimen/_10dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/viewMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:background="#fa2255"
+            android:src="@drawable/group46"/>
+        <TextView
+            android:id="@+id/closeIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@android:drawable/ic_menu_close_clear_cancel"
+            android:textColor="@color/black"
+            android:layout_marginEnd="@dimen/_20dp"/>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

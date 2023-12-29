@@ -7,14 +7,14 @@
         motion:constraintSetEnd="@+id/end"
         motion:duration="1000">
         <OnSwipe
-            motion:touchAnchorId="@+id/viewMovie"
+            motion:touchAnchorId="@+id/player"
             motion:touchAnchorSide="right"
             motion:dragDirection="dragRight" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
         <Constraint
-            android:id="@+id/viewMovie"
+            android:id="@+id/player"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             motion:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +24,7 @@
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@+id/viewMovie"
+            android:id="@+id/player"
             android:layout_width="146dp"
             android:layout_height="88dp"
             motion:layout_constraintBottom_toBottomOf="parent"

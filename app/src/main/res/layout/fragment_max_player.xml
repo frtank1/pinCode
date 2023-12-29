@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_main.xml -->
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/motion_scene"
+    tools:showPaths="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewMovie"
+        android:layout_width="391dp"
+        android:layout_height="248dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:background="#fa2255"
+        android:src="@drawable/group46"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

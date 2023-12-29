@@ -37,4 +37,9 @@
     <string name="amount">21212</string>
     <string name="sort">Сортировать по</string>
     <string name="вы_хотите">Вы уверены, что хотите удалить валюту?</string>
+    <string name="home">Home</string>
+    <string name="favorites">Favorites</string>
+    <string name="ratings">ratings</string>
+    <string name="search">search</string>
+    <string name="nowPlaying">Поиск</string>
 </resources>

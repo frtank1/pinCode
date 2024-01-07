@@ -33,6 +33,13 @@
     </style>
 
     <style name="TextView" parent="Widget.AppCompat.TextView">
+
+    </style>
+
+    <style name="TextViewNew" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@drawable/bg_btn_text_color</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:background">@drawable/btn_shape_background</item>
         <item name="android:layout_marginStart">@dimen/_20dp</item>
         <item name="android:layout_marginEnd">@dimen/_20dp</item>
         <item name="android:layout_marginTop">@dimen/_20dp</item>

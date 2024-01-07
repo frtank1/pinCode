@@ -11,12 +11,12 @@ import com.example.myapplication.R
 class MainActivity : AppCompatActivity() {
     val KEY_TEXT: String = "TEXTCODE"
     val ID_COLOR: String = "IDCOLOR"
-    lateinit var textCode: TextView
+    lateinit var textCode: BoxText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_hw20)
 
-        textCode = findViewById(R.id.txt_code)
+        textCode = findViewById(R.id.txt_code_box)
 
         val oneButton: Button = findViewById(R.id.number_1)
         val twoButton: Button = findViewById(R.id.number_2)

@@ -24,8 +24,9 @@ class BoxText @JvmOverloads constructor(
         ).apply {
             try {
                 status = getInt(R.styleable.BoxText_status, -1)
-            } finally {
                 updateBackground(status)
+            } finally {
+               recycle()
             }
         }
     }

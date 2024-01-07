@@ -7,12 +7,13 @@
     tools:context=".hw7to10pincode.MainActivity">
 
     <com.example.myapplication.hw20.BoxText
-        android:id="@+id/txt_code"
+        android:id="@+id/txt_code_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingHorizontal="@dimen/_100dp"
         android:paddingVertical="@dimen/_10dp"
+        android:text="Введите код!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -30,7 +31,7 @@
         android:text="@string/_1"
         app:layout_constraintEnd_toStartOf="@+id/number_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_code" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_code_box" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_2"
@@ -41,7 +42,7 @@
         android:text="@string/_2"
         app:layout_constraintEnd_toStartOf="@+id/number_3"
         app:layout_constraintStart_toEndOf="@id/number_1"
-        app:layout_constraintTop_toBottomOf="@+id/txt_code" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_code_box" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_3"
@@ -53,7 +54,7 @@
         android:text="@string/_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/number_2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_code" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_code_box" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/number_4"

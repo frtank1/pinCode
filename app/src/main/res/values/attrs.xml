@@ -3,4 +3,9 @@
     <declare-styleable name="BoxText">
         <attr name="status" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="BoxTextGroup">
+        <attr name="pin" format="integer" />
+    </declare-styleable>
 </resources>
+

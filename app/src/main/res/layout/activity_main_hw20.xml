@@ -6,14 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".hw7to10pincode.MainActivity">
 
-    <com.example.myapplication.hw20.BoxText
+    <com.example.myapplication.hw20.BoxTextGroup
         android:id="@+id/txt_code_box"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingHorizontal="@dimen/_100dp"
+        app:pin="1956"
         android:paddingVertical="@dimen/_10dp"
-        android:text="Введите код!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

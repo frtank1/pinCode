@@ -6,16 +6,18 @@ import androidx.appcompat.widget.AppCompatTextView
 import com.example.myapplication.R
 
 
-private const val COLOR_NONE = -1
-private const val COLOR_TRUE = 1
-private const val COLOR_FALSE = 0
-private var status = -1
 
 class BoxText @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int =0
 ): AppCompatTextView(context,attrs,defStyleAttr) {
+    private  val COLOR_NONE = -1
+    private  val COLOR_TRUE = 1
+    private var current = -1
+    private var status = -1
+    private var check:Boolean = false
+
     init {
         context.theme.obtainStyledAttributes(
             attrs,
@@ -32,6 +34,19 @@ class BoxText @JvmOverloads constructor(
     }
 
     fun setBoxText(text: String) {
+        if (text.isEmpty()){
+            check = false
+            updateBackground(COLOR_NONE)
+        }else {
+            val temp = text.toInt()
+          if (current == temp){
+            check = true
+            updateBackground(COLOR_TRUE)
+          }else{
+              check = false
+              updateBackground(Companion.COLOR_FALSE)
+          }
+        }
         setText(text)
     }
 
@@ -43,9 +58,21 @@ class BoxText @JvmOverloads constructor(
 
     private fun updateBackground(status: Int) {
         when (status) {
-            COLOR_FALSE -> setBackgroundResource(R.drawable.shape_pressed)
+            Companion.COLOR_FALSE -> setBackgroundResource(R.drawable.shape_pressed)
             COLOR_TRUE -> setBackgroundResource(R.drawable.shape)
             COLOR_NONE -> setBackgroundResource(R.drawable.shape_default)
         }
+    }
+
+    fun getCheck():Boolean{
+        return check
+    }
+
+     fun current(temp:Int){
+        current = temp
+    }
+
+    companion object {
+        private const val COLOR_FALSE = 0
     }
 }

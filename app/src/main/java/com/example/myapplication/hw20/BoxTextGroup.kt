@@ -13,7 +13,7 @@ private lateinit var box3: BoxText
 private lateinit var box4: BoxText
 private const val MAX = 4
 
-class BoxTextGroup @JvmOverloads constructor(
+class  BoxTextGroup @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0

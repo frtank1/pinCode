@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.example.myapplication.hw22.MainFragment"
+        android:label="Main"
+        tools:layout="@layout/fragment_main2" >
+        <action
+            android:id="@+id/action_main_to_statstic"
+            app:destination="@id/statistic_fragment"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_enter_anim"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_enter_anim"/>
+        <action
+            android:id="@+id/action_main_fragment_to_another_fragment"
+            app:destination="@id/another_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/main_fragment" />
+        <deepLink app:uri = "www.example.com"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/statistic_fragment"
+        android:name="com.example.myapplication.hw22.StatisticFragment"
+        android:label="Statistic"
+        tools:layout="@layout/fragment_staistic"/>
+
+    <fragment
+        android:id="@+id/another_fragment"
+        android:name="com.example.myapplication.hw22.AnotherFragment"
+        android:label="ANOTHER"
+        tools:layout="@layout/fragment_another"/>
+
+</navigation>

@@ -14,3 +14,4 @@ class DetailsRepositoryImpl(
         remoteDataSource.getCourseDetails(currencies,source,callback)
     }
 }
+
